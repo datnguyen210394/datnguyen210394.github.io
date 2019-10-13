@@ -1,0 +1,47 @@
+h1 {
+    font-size: 24px;
+}
+#mainmenu a {
+    font-size: 20px;
+    color: #7373737;
+    text-decoration: none;
+}
+#mainmenu a:hover, #mainmenu a.active {
+    color: red;
+}
+#mainmenu a.active {
+    font-weight: bold;
+}
+img {
+    max-width: 100%;
+}
+.box {
+    padding: 15px;
+    margin: 0;
+    margin-top: 0;
+    margin-bottom:0 ;
+    margin-left: 0;
+    margin-right: 0;
+    float: left;
+    width: 30%;
+    border: 1px solid #dddddd;
+    border-top-width: 5px;
+}
+.info {
+    border-color: royalblue;
+}
+.info span {
+    color: royalblue;
+}
+.contact {
+    border-color: slateblue;
+}
+.contact span {
+    color: slateblue;
+}
+.company {
+    border-color: teal ;
+}
+.company span {
+    color: teal;
+}
