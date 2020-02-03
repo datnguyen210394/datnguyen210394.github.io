@@ -1,0 +1,19 @@
+/*==Body==*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+ }
+ #page {
+     text-align: center;
+ }
+ .a{
+     text-align: center;
+ }
+ h1 {
+     text-align: center;
+ }
+ .b{
+     text-align: right;
+ }
+ P{
+     text-align: left;
+ }

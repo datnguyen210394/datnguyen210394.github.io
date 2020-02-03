@@ -1,0 +1,17 @@
+/*==Body==*/
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+#page {
+    color: rgb(88, 83, 83);
+    border-bottom: 1px solid;
+}
+h1 {
+    text-align: left;
+}
+h2 {
+    text-align: left;
+}
+p {
+    text-align: left;
+}
