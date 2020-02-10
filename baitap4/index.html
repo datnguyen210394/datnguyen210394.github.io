@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <style type="text/css">
+		 
+            .navbar {
+                border: none !important;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                justify-content: space-between !important;
+            }
+    
+            .logo-brand img {
+                width: 120px;
+            }
+    
+            .parent-menu.desktop {
+                height: 100%;
+                flex: initial;
+            }
+    
+            .parent-menu.desktop .list-menu {
+                margin-bottom: 0px !important;
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+            }
+    
+            .desktop.parent-menu .parent-menu-item {
+                color: white;
+                margin: 0 10px 0 10px;
+                text-transform: uppercase;
+                position: relative;
+                min-height: 60px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                font-size: 1.1rem;
+            }
+    
+            .nav-indicator {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 5px;
+                background-color: white;
+            }
+    
+            .nav-padding {
+                padding: 0 3px;
+            }
+    
+            .desktop.parent-menu li:last-child {
+                margin-right: 0px;
+            }
+    
+            .shopping-cart-top-menu {
+                font-size: 1.4rem !important;
+                padding-right: 1rem;
+                cursor: pointer;
+            }
+    
+            .user-top-menu {
+                padding-left: 1rem;
+                font-size: 1.4rem !important;
+                cursor: pointer;
+            }
+    
+            .parent-menu a {
+                color: white;
+            }
+    
+            .desktop.parent-menu li:hover>a {
+                text-decoration: none;
+                color: #c4c4c4;
+            }
+    
+            .parent-menu .dropdown-menu a {
+                color: #464646;
+            }
+    
+            .parent-menu .dropdown-menu li:hover a {
+                color: white;
+            }
+    
+            .navbar-toggler {
+                outline: none !important;
+            }
+    
+            .count-cart-item {
+                position: absolute;
+                top: -10px;
+                left: 20px;
+                background-color: #26a69a;
+            }
+    
+            .dropdown-menu.active {
+                display: flex;
+            }
+    
+            .track-menu.active {
+                display: flex;
+            }
+    
+             
+            .modal-dialog {
+                margin-top: 10%;
+            }
+    
+            #sign-in-div,
+            #sign-up-div,
+            #forgot-password .modal-content {
+                padding: 3rem;
+            }
+    
+            #modal-signin .nav-tabs .nav-link {
+                border-top-left-radius: 2px;
+                border-top-right-radius: 2px;
+                text-align: center;
+                color: #464646;
+                background-color: #1e3c740f;
+                padding: 1rem;
+            }
+    
+            #modal-signin .nav-tabs .nav-link.active {
+                background-color: white;
+            }
+    
+            .modal-login-item {
+                margin-bottom: 2rem;
+            }
+    
+            .modal-login-item input {
+                border: none;
+                border-bottom: 1px solid #9e9e9e;
+                width: 100%;
+            }
+    
+            .modal-login-item-half {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5px;
+            }
+    
+            .btn-login-modal {
+                letter-spacing: .5px;
+                border-radius: 4px;
+                padding: .5rem 1rem;
+                width: 100%;
+                text-transform: uppercase;
+            }
+    
+            #overlay {
+                position: fixed;
+                background-color: black;
+                opacity: 0.7;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 998;
+                display: none;
+                transition: 1s;
+                transition-timing-function: ease;
+            }
+    
+            .mobile {
+                display: none;
+            }
+    
+            #forgot-password {
+                display: none;
+            }
+    
+            .checkbox-remember-me {
+                display: block;
+                position: relative;
+                padding-left: 25px;
+                margin-bottom: 12px;
+            }
+    
+            .checkbox-remember-me input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+    
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 20px;
+                width: 20px;
+                background-color: #1e3c741f;
+            }
+    
+            .checkbox-remember-me input:checked~.checkmark {
+                background-color: #3C78E8;
+            }
+    
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+    
+            .checkbox-remember-me input:checked~.checkmark:after {
+                display: block;
+            }
+    
+            .checkbox-remember-me .checkmark:after {
+                left: 8px;
+                top: 4px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+            }
+    
+            #sign-in-div .fab {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                color: #fff;
+                overflow: hidden;
+                margin: 0 10px 0 10px;
+            }
+    
+            #sign-in-div .fab img {
+                height: 100%;
+                width: 40px;
+            }
+    
+            .user-dropdown-avatar {
+                overflow: hidden;
+                padding-left: 1rem;
+                cursor: pointer;
+                width: 3rem;
+                height: 2rem;
+            }
+    
+            .user-dropdown-avatar img {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+            }
+    
+            .dropdown-menu {
+                top: 100%;
+                position: absolute;
+                left: auto;
+                right: 0;
+                display: none;
+                flex-flow: column;
+                width: 200px;
+                padding: 0;
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px;
+                border: none;
+                margin-top: 0.25rem;
+            }
+    
+            .dropdown-menu a,
+            .track-menu a {
+                text-decoration: none;
+            }
+    
+            .dropdown-menu li {
+                width: 100%;
+                text-align: center;
+                color: #464646 !important;
+                padding: .7rem 1rem;
+                cursor: pointer;
+                text-transform: none;
+            }
+    
+            .dropdown-menu li:hover {
+                background-color: #c4c4c4;
+                color: white !important;
+            }
+    
+            .track-menu {
+                border-radius: 4px;
+                background-color: white;
+                margin-top: 0.25rem;
+                background-clip: padding-box;
+                list-style: none;
+                text-align: left;
+                font-size: 1rem;
+                float: left;
+                z-index: 1000;
+                top: 100%;
+                width: 500px;
+                position: absolute;
+                display: none;
+                flex-flow: column;
+                padding: 0.5rem 0;
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px;
+            }
+    
+            .track-menu li {
+                width: 100%;
+                padding: .7rem 1rem;
+                cursor: pointer;
+                text-transform: none;
+            }
+    
+            .track-menu a {
+                color: #464646 !important;
+            }
+    
+            .track-menu a:hover {
+                color: #3c78e8 !important;
+            }
+    
+            .shopping-cart-mobile {
+                cursor: pointer;
+                position: fixed;
+                height: 45pt;
+                width: 45pt;
+                padding: 0px;
+                z-index: 900;
+                text-align: center;
+                bottom: 70pt;
+                right: 18pt;
+                color: white;
+                border-radius: 50%;
+                background-color: #26a69a;
+                box-shadow: 0 3px 12px rgba(0, 0, 0, .15);
+                -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, .15);
+            }
+    
+            .shopping-cart-mobile .fa-shopping-cart {
+                position: absolute;
+                top: 14pt;
+                right: 9pt;
+                font-size: 30px;
+            }
+    
+            .count-cart-item-mobile {
+                position: absolute;
+                font-size: 1.2rem;
+                top: -15pt;
+                right: -2pt;
+                color: #464646;
+                background-color: transparent;
+            }
+    
+    
+            .parent-menu a {
+                font-size: 0.95rem !important;
+            }
+    
+             
+            .fb_customer_chat_bounce_in_v2 {
+                bottom: 113pt !important;
+            }
+            
+            @media (max-width: 1199px) {
+                .desktop.parent-menu .parent-menu-item {
+                    margin: 0 5px 0 5px;
+                }
+            }
+    
+            @media (max-width: 1366px) {
+                .logo-brand img {
+                    width: 100px;
+                }
+    
+                .desktop.parent-menu .parent-menu-item {
+                    min-height: 54px;
+                }
+    
+                .nav-indicator {
+                    height: 4px;
+                }
+    
+                .parent-menu a {
+                    font-size: 0.9rem !important;
+                }
+            }
+    
+            @media (max-width: 991px) {
+                .navbar {
+                    padding: 15px 10px;
+                }
+    
+                .user-dropdown-avatar {
+                    padding-left: 0;
+                    text-align: center;
+                }
+    
+                .logo-brand {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+    
+                .parent-menu.mobile {
+                    font-size: 1rem;
+                    position: fixed;
+                    width: 250px;
+                    height: 100%;
+                    left: -250px;
+                    z-index: 999;
+                    background-color: white;
+                    top: 0px;
+                    align-items: center;
+                    transition: 0.4s;
+                }
+    
+                .parent-menu.mobile ul {
+                    padding: 0;
+                }
+    
+                .parent-menu.mobile li {
+                    height: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 10px 25px;
+                }
+    
+                .parent-menu.mobile a {
+                    color: #464646;
+                }
+    
+                .parent-menu.mobile .active {
+                    background-color: #c4c4c4;
+                }
+    
+                .parent-menu.mobile .active a {
+                    color: white;
+                }
+    
+                .parent-menu.mobile a:hover {
+                    text-decoration: none;
+                }
+    
+                .desktop,
+                .nav-indicator {
+                    display: none;
+                }
+    
+                .mobile {
+                    display: block;
+                }
+            }
+    
+            @media (min-width:576px) {
+                #modal-signin .modal-dialog {
+                    max-width: 400px;
+                }
+            }
+    
+            @media (max-width: 576px) {
+                .shopping-cart-mobile {
+                    width: 50px;
+                    height: 50px;
+                }
+    
+                .shopping-cart-mobile .fa-shopping-cart {
+                    position: absolute;
+                    top: 11pt;
+                    right: 7pt;
+                    font-size: 27px;
+                }
+            }
+    
+            #advisory-modal input {
+                border: none;
+                border-bottom: 1px solid #dee2e6;
+                width: 100%;
+            }
+    
+            #advisory-modal input:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+    
+            .admin-page,
+            .teacher-page {
+                display: none;
+            }
+    
+            .required-info-body {
+                padding: 1.5rem;
+                border-radius: 4px;
+                background-color: #f2f8fd;
+                text-align: center;
+            }
+    
+            .required-info-footer {
+                padding: 0.5rem 1.5rem;
+                border-top: 1px solid #dedede;
+            }
+    
+            .required-info-icon {
+                color: #808080;
+                margin-bottom: 0.4rem;
+            }
+    
+            #required-info-input {
+                margin-top: 1.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="containtner-fluid" id="header"> 
+            <div class="nav-bar">
+		     <nav class="navbar navbar-expand-lg">
+			    <div class="parent-menu desktop">
+				    <ul class="list-menu">
+					<li class="parent-menu-item" onclick="GoToSite(this)" data-href="/khoa-hoc/truc-tuyen">
+						<a href="/khoa-hoc/truc-tuyen" class="nav-padding">
+							<span>Trực tuyến</span>
+						</a>
+						
+					</li>
+					<li class="parent-menu-item" onclick="GoToSite(this)" data-href="/khoa-hoc/phong-lab">
+						<a href="/khoa-hoc/phong-lab" class="nav-padding">
+							<span>Phòng lab</span>
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="parent-menu-item" onclick="GoToSite(this)" data-href="/lo-trinh">
+						<a href="/lo-trinh" class="nav-padding">
+							<span>Lộ trình</span>
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="parent-menu-item" onclick="GoToSite(this)" data-href="/san-pham-hoc-vien">
+						<a href="/san-pham-hoc-vien" class="nav-padding">
+							<span>Sản phẩm học viên</span>
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="parent-menu-item" onclick="GoToSite(this)" data-href="/trungtam/lich-khai-giang">
+						<a href="/trungtam/lich-khai-giang" class="nav-padding">
+							<span>Khai giảng</span>
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="parent-menu-item" onclick="GoToSite(this)" data-href="/posts">
+						<a href="/posts" class="nav-padding">
+							<span>Blog</span>
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="parent-menu-item" onclick="GoToSite(this)" data-href="/trai-nghiem">
+						<a href="/trai-nghiem" class="nav-padding">
+							<span>Trải nghiệm</span>
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="parent-menu-item" onclick="GoToSite(this)" data-href="/viec-lam">
+						<a href="/viec-lam" class="nav-padding">
+							<span>Việc làm</span>
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="parent-menu-item" onclick="ShowSubMenu(this)" data-dropdown="submenu-dropdown-8">
+						<a class="nav-padding">
+							<span>Chúng tôi&ensp;<i class="fas fa-caret-down"></i></span>
+						</a>
+						
+						<ul class="dropdown-menu" id="submenu-dropdown-8">
+							
+							<a href="/trungtam/trung-tam">
+								<li><span>Trung tâm</span></li>
+							</a>
+							
+							<a href="/trungtam/quy-dinh-chung">
+								<li><span>Quy định chung</span></li>
+							</a>
+							
+							<a href="/trungtam/giang-vien">
+								<li><span>Giảng viên</span></li>
+							</a>
+							
+							<a href="/trungtam/huong-dan-mua-khoa-hoc">
+								<li><span>Hướng dẫn đăng ký học</span></li>
+							</a>
+							
+						</ul>
+						
+					</li>
+					
+					
+					<li class="parent-menu-item">
+						<div style="position: relative;">
+							<a href="/gio-hang">
+								<i class="fas fa-shopping-cart shopping-cart-top-menu"></i>
+							</a>
+							
+						</div>
+						
+						
+						<ul class="dropdown-menu" id="dropdown-user-menu">
+							<li class="admin-page" onclick="GoToAdminSite()"><span>Trang quản trị</span></li>
+							<li class="teacher-page" onclick="GoToTeacherSite()"><span>Trang giảng viên</span></li>
+							<li class="choose-active-order"><span>Kích hoạt đơn hàng</span></li>
+							<li class="choose-user-classes"><span>Lớp học của tôi</span></li>
+							<li class="choose-user-profile"><span>Hồ sơ cá nhân</span></li>
+							<li class="choose-sign-out"><span>Đăng xuất</span></li>
+						</ul>
+						
+					</li>
+				</ul>
+			</div>
+			<div class="modal fade" id="forgot-password" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<form class="modal-login-form">
+							<div style="padding-top: 1px" class="modal-login-item text-center">
+								<h2>Quên mật khẩu</h2>
+							</div>
+							<div class="modal-login-item">
+								<input type="text" placeholder="Email" id="forgot-password-email" required="">
+							</div>
+							<button type="button" class="btn btn-green btn-login-modal" id="btn-forgot-password">Gửi
+								mail trợ giúp</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="parent-menu mobile" id="mySidenav" style="overflow-y: auto">
+				<ul>
+					<li class="parent-menu-item">
+						<a href="/">
+							<span>Trang chủ</span>
+						</a>
+					</li>
+					
+					
+					<li class="parent-menu-item">
+						<a href="/khoa-hoc/truc-tuyen">
+							<span>Trực tuyến&ensp;</span>
+						</a>
+					</li>
+					
+				
+					
+					
+					<li class="parent-menu-item">
+						<a href="/khoa-hoc/phong-lab">
+							<span>Phòng lab&ensp;</span>
+						</a>
+					</li>
+					
+				
+					
+					
+					<li class="parent-menu-item">
+						<a href="/lo-trinh">
+							<span>Lộ trình&ensp;</span>
+						</a>
+					</li>
+					
+				
+					
+					
+					<li class="parent-menu-item">
+						<a href="/san-pham-hoc-vien">
+							<span>Sản phẩm học viên&ensp;</span>
+						</a>
+					</li>
+                    
+				
+					
+					
+					<li class="parent-menu-item">
+						<a href="/trungtam/lich-khai-giang">
+							<span>Khai giảng&ensp;</span>
+						</a>
+					</li>
+					
+				
+					
+					
+					<li class="parent-menu-item">
+						<a href="/posts">
+							<span>Blog&ensp;</span>
+						</a>
+					</li>
+					
+				
+					
+					
+					<li class="parent-menu-item">
+						<a href="/trai-nghiem">
+							<span>Trải nghiệm&ensp;</span>
+						</a>
+					</li>
+					
+				
+					
+					
+					<li class="parent-menu-item">
+						<a href="/viec-lam">
+							<span>Việc làm&ensp;</span>
+						</a>
+					</li>
+					
+                </div>
+					
+					
+					
+    </body>
+    </html>
