@@ -1,0 +1,32 @@
+
+.box1 {
+    float: left;
+    background: red;
+    color: white;
+    width: 33%;
+    height: 400px;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: 15px solid;
+    border-left: 15px solid;
+    
+}
+.box2 {
+    background: green;
+    color: white;
+    float: left;
+    width: 33%;
+    height: 400px;  
+    box-sizing: border-box;
+    border-right: 15px solid;
+    text-align: center;
+}
+.box3 {
+    background: blue;
+    color: white;
+    float: left;
+    width: 33%;
+    height: 400px;
+    text-align: center;
+    border-right: 15px solid;
+}
