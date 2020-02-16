@@ -12,7 +12,7 @@
     width: 60%;
     height: 400px;
     text-align: center;
-    border-left: 15px solid white;
+    border-right: 15px solid white;
 }
 .box2 {
     background: green;
