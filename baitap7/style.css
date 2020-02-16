@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+.box {
+    width: 100%;
+    height: 100%;
+}
+.box1 {
+    float: left;
+    background: red;
+    color: white;
+    width: 60%;
+    height: 400px;
+    text-align: center;
+    border-right: 15px solid white;
+}
+.box2 {
+    background: green;
+    float: left;
+    width: 40%;
+    height: 200px;  
+}
+.box3 {
+    background: blue;
+    float: left;
+    width: 40%;
+    height: 200px;
+}
