@@ -1,0 +1,57 @@
+/* html */
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+}
+/* body */
+a{
+    text-decoration: none;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.623);
+    font-size: 60px;
+}
+h1{
+    width: 100%;
+    height: 200px;
+    background: black;  
+    text-align: center; 
+    line-height: 180px;
+    border: 5px solid rgb(85, 26, 26);
+}
+.col{
+    float: left;
+    padding: 100px;
+    border-bottom: 1px solid black;
+}
+p{
+    color: brown;
+    font-size: 25px;
+}
+.col:hover p {
+    color: rgb(0, 0, 0);
+}
+.thumb img {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+.thumb:hover img{
+    opacity: 0.5;
+}
+
+/* .content > a {
+    color: red;
+    font-size: 20px; */
+/* }
+/* .content {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-evenly; */
+    /* display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 40px; */
+/* .content:hover a {
+    color: black;
+} */
