@@ -1,0 +1,41 @@
+body {
+    font-family: Arial;
+    font-size: 16px;
+    color: black;
+    padding: 200px 600px;
+    background: 
+}
+#box {
+    margin: 0px;
+    padding: 10px;
+    border: 2px solid #333;
+    width: 285px;
+    background: rgb(248, 99, 0);
+}
+
+
+#ketqua {
+    margin: 0px 0px 15px 0px;
+    padding: 10px;
+    text-align: right;
+    width: 265px;
+    /* outline: none; */
+    border: 1px solid #333;
+}
+
+.operator {
+    margin: 0px 0px 15px 15px;
+    padding: 10px 10px 10px 10px;
+    float: left;
+    text-align: center;
+    text-transform: lowercase;
+    background-color: rgb(204, 185, 185);
+    color: rgb(0, 0, 0);
+    width: 65px;
+}
+.operator {
+    margin-left: 0px;
+}
+.operator:hover {
+    background-color: rgb(255, 255, 255);
+}
