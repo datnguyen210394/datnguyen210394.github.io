@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(55, 56, 58)
+    background-image: url("hongkong2.jpg");
+    background-position: center; /* Center the image */
 }
 .wrap {
   margin: 0;
@@ -7,12 +8,13 @@ body {
 }
 .container {
     width: 500px;
-    height: 500px;
+    height: 600px;
     text-align: center;
     background: rgb(241, 233, 233);
     box-sizing: border-box;
     border: 2px solid rgb(255, 255, 255);
 }
+
 #last-name {
     width: 320px;
     height: 30px;
@@ -22,6 +24,10 @@ body {
     height: 30px;
 }
 #password {
+    width: 320px;
+    height: 30px;
+}
+#phone {
     width: 320px;
     height: 30px;
 }
