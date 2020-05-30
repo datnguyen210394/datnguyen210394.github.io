@@ -21,9 +21,23 @@ h1{
     line-height: 180px;
     border: 5px solid rgb(85, 26, 26);
 }
-.col{
-    float: left;
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    grid-gap: 50px 397px;
     padding: 100px;
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        display: inline-block;
+    }
+}
+.col{
+    /* float: left; */
+    /* padding: 100px; */
     border-bottom: 1px solid black;
 }
 p{
