@@ -1,0 +1,34 @@
+extends template-part/layout.pug
+block style
+    link(rel="stylesheet", href="css/registration.css")
+block content 
+    section 
+        include template-part/product-list-item.pug
+    .container
+        .row-2
+            form(action="")
+                .login2
+                    a(href="login.html") Đăng Nhập
+                .registration
+                    a(href="registration.html") Đăng Ký
+                label(for="họ-ten" style="padding-top: 25px") Họ Và Tên
+                br
+                input(type="text" name="name" placeholder="name" required id="ho-ten" )
+                br
+                br
+                label(for="email") Email
+                br
+                input(type="text" placeholder="Email" id="email")
+                br
+                br
+                label(for="Password") Password
+                br
+                input(type="password" name="password" placeholder="Password" id="password")
+                br
+                br
+                label(for="phone") Số Điện Thoại
+                br
+                input(type="tel" id="phone" name="Telephone" placeholder="098-545-3525" required="")
+                br
+                br
+                input(type="submit" name="dangky" value="Đăng Ký" class="login-form")

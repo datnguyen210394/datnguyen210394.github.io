@@ -1,0 +1,52 @@
+header.container-fluid
+    .header-left 
+        .logo
+            a(href="index.html") 
+                img(src="img/navy.png", alt="logo")
+    .header-right 
+        .search
+            input(type="text" placeholder="Tìm kiếm sản phẩm nhanh" id="ser")
+        .login
+            a(href="login.html")
+                img(src="img/male.png", alt="login")
+        .like
+            a(href="#")
+                img(src="img/heart.png", alt="like")
+        .market
+            a(href="giohang.html")
+                img(src="img/supermarket.png", alt="market")
+    .header-bottom
+       nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='index.html') Navy Store
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarNavAltMarkup
+            .navbar-nav
+                a.nav-item.nav-link(href='trangdiem.html') Trang Điểm
+                a.nav-item.nav-link(href='daugoi.html') Dầu Gội
+                a.nav-item.nav-link(href='nuochoa.html') Nước Hoa
+                a.nav-item.nav-link(href='quatang.html') Quà Tặng
+    .header-bottom2
+        .transport
+            img(src="img/truck.png", alt="transport" width="80px;")
+            p(style="position: absolute;width: 100px;top: 255px; left: 350px;") MIỄN PHÍ vận chuyển nội thành.
+        .change
+            img(src="img/arrow.png", alt="change" width="70px;")
+            p(style="position: absolute;width: 110px;top: 10px; left: 90px;") ĐỔI TRẢ hàng trong 3 giờ kể từ khi mua hàng.
+        .gift
+            img(src="img/gift.png", alt="gift" width="70px;")
+            p(style="position: absolute;width: 105px;top: 10px; left: 90px;") QUÀ TẶNG hấp dẫn hàng tuần.
+        #carouselExampleControls.carousel.slide(data-ride='carousel')
+            .carousel-inner
+                .carousel-item.active
+                    img.d-block.w-100(src='img/banner2.jpg' alt='banner' width="100%" height="500px")
+                .carousel-item
+                    img.d-block.w-100(src='img/banner.jpg' alt='banner' width="100%" height="500px")
+                .carousel-item
+                    img.d-block.w-100(src='img/sale2.jpg' alt="banner" width="100%" height="500px")
+                a.carousel-control-prev(href='#carouselExampleControls' role='button' data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleControls' role='button' data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next

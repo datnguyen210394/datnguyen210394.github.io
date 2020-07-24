@@ -1,0 +1,31 @@
+extends template-part/layout.pug
+block style
+    link(rel="stylesheet", href="css/login.css")
+block content 
+    section 
+        include template-part/product-list-item.pug
+    .container
+        .row-2
+            form(action="")
+                .login2
+                    a(href="login.html") Đăng Nhập
+                .registration
+                    a(href="registration.html") Đăng Ký
+                br
+                label(for="email") Email
+                br
+                input(type="text" placeholder="Email" id="email")
+                br
+                br
+                label(for="Password") Password
+                br
+                input(type="password" name="password" placeholder="Password" id="password")
+                br
+                br
+                label(for="luu dang nhap" style="position: absolute; left: 100px; bottom: 147px;") Lưu đăng nhập
+                input(type="checkbox" style="position: absolute; left: -40px;")
+                br
+                input(type="submit" name="dangky" value="Đăng Nhập" class="login-form")
+                br
+                br
+                a(href="registration.html" style="color:red;") Đăng ký ngay để nhận nhiều quà tặng.

@@ -1,0 +1,59 @@
+extends template-part/layout.pug
+block style
+    link(rel="stylesheet", href="css/giohang.css")
+block content 
+    .table-head
+        tr
+                .column-2
+                    th Tên Sản Phẩm
+                .column-3
+                    th Giá Tiền
+                .column-4
+                    th Số Lượng
+    .container-market
+        .table-row
+            tr
+                .column-1
+                    td
+                        .cart-img
+                            img(src="img/nuochoa2.jpg", alt="sanpham" style="width:250px; height:200px;")
+                .column-2
+                    td Tên Sản Phẩm
+                .column-3
+                    td 299.00đ
+                .column-4
+                    td
+                        flex-w
+                            .btn-num
+                                input(type="number" name="num-product1" valeu="1")
+        .table-row
+            tr
+                .column-1
+                    td
+                        .cart-img
+                            img(src="img/nuochoa4.jpg", alt="sanpham" style="width:250px; height:200px;")
+                .column-2
+                    td Tên Sản Phẩm
+                .column-3
+                    td 299.00đ
+                .column-4
+                    td
+                        flex-w
+                            .btn-num
+                                input(type="number" name="num-product1" valeu="1")
+        
+        .table-row
+            tr
+                .column-1
+                    td
+                        .cart-img
+                            img(src="img/nuochoa3.jpg", alt="sanpham" style="width:250px; height:200px;")
+                .column-2
+                    td Tên Sản Phẩm
+                .column-3
+                    td 299.00đ
+                .column-4
+                    td
+                        flex-w
+                            .btn-num
+                                input(type="number" name="num-product1" valeu="1")
