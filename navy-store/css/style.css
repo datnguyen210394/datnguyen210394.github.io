@@ -13,7 +13,7 @@ body {
 .navbar-light .navbar-brand { font-size: 30px; color: white;}
 .navbar-light .navbar-nav .nav-link { color:white;}
 .change { position: absolute; right: 825px; top: 245px; padding-top: 15px;}
-.transport { padding-left: 235px; padding-bottom: 50px; ; padding-top: 15px;}
+.transport { padding-left: 280px; padding-bottom: 50px; ; padding-top: 15px;}
 .gift {position: absolute; top: 245px; left: 965px; padding-top: 5px;}
 .header-bottom2 { padding-bottom: 50px;}
 h1 {text-align: center;  padding-top: 20px; font-weight: bold; }  
