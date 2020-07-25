@@ -4,21 +4,21 @@ body {
 }
 .logo {margin-left: 55px}
 .search {margin-left: 465px; margin-top: -70px;}
-.login {position: absolute;top: 65px;right: 360px;}
-.like {position: absolute;top: 65px;right: 310px;}
-.market {position: absolute; top: 65px; right: 260px;}
+.login{ float: right;padding-right: 200px; }
+.like{ float: right; padding-right: 10px; }
+.market{ float: right; padding-right: 10px;}
 
 .header-right {padding-bottom: 55px;}
 .bg-light { padding-left: 360px; font-size: 28px; background-color: #4B4747 !important; color: white;} 
 .navbar-light .navbar-brand { font-size: 30px; color: white;}
 .navbar-light .navbar-nav .nav-link { color:white;}
 .change { position: absolute; right: 825px; top: 245px; padding-top: 15px;}
-.transport { padding-left: 235px; padding-bottom: 50px; border-bottom: 1px solid; padding-top: 15px;}
+.transport { padding-left: 235px; padding-bottom: 50px; ; padding-top: 15px;}
 .gift {position: absolute; top: 245px; left: 965px; padding-top: 5px;}
 .header-bottom2 { padding-bottom: 50px;}
 h1 {text-align: center;  padding-top: 20px; font-weight: bold; }  
 .carousel-inner {padding-top: 20px;}
-.row { text-align: center; padding-top: 30px; padding-bottom: 60px; 
+.row { text-align: center;  
 }
 .product {width: 450px; height: 350px;}
 .buy {     width: 120px;
@@ -35,6 +35,7 @@ footer {background: #4B4747; color: white;}
     min-width: 25%;
     min-height: 1000px;
     border: 1px solid;
+    padding: 25px;
 }
 .sub-menu {
     width: 20px;
@@ -47,11 +48,11 @@ footer {background: #4B4747; color: white;}
     padding: 10px;
     height: 40px;
 }
-.product1 {width: 300px; height: 250px;}
+.product1 {width: 250px; height: 220px;}
 .buy1 {width: 120px;
     height: 30px;
     background: black;
-    margin-left: 105px;
+    margin-left: 75px;
     margin-bottom: 20px;
 }
 input {
@@ -60,6 +61,9 @@ input {
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-left: 1em
     ;
+}
+.label {
+    padding-right: 100px;
 }
 @media screen and (max-width:812px) {
     .transport {
@@ -90,7 +94,7 @@ input {
     .login {
         position: absolute;
         top: 230px;
-        right: 280px;
+        right: 90px;
     }
     .market {
         position: absolute;
@@ -103,14 +107,15 @@ input {
         background-color: #4B4747 !important;
         color: white;
     }
-    .buy {
-        margin-left: 130px;
+    .buy1 {
+        margin-left: 120px;
     }
     .product {
         width: 200px;
         height: 150px;
     }
     .row {
+        padding-top: 20px;
         display: list-item;
     }
 }
@@ -159,3 +164,12 @@ input {
         margin-left: 65px;
     }
 } */
+.navbar-light .navbar-nav .nav-link:hover{
+    color: red;
+}
+.navbar-light .navbar-brand:hover {
+    color: red;
+}
+.buy a {
+    text-decoration: none;
+}
